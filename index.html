@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Robert Firanji">
+    <title>Šablon za kreiranje objekata studenata</title>
+</head>
+
+<body>
+
+    <script>
+
+        /////////////////// PROTOTYPE ////////////////////////////////////////
+        function Student(name, address, phone, course) {
+            this.name = name;
+            this.address = address;
+            this.phone = phone;
+            this.course = course;
+
+            Student.prototype.getName = function () {
+                return this.name;
+            }
+            Student.prototype.getInfo = function () {
+                return "Name: " + this.name + "\n" +
+                    "Address: " + this.address + "\n" +
+                    "Phone: " + this.phone + "\n" +
+                    "Course: " + this.course;
+            }
+        }
+
+        ///////////////////////// STUDENT 1 /////////////////////////////////
+
+        function Student1(name, address, phone, course) {
+            Student.call(this, name, address, phone, course);
+        }
+
+        Student1.prototype = Object.create(Student.prototype);
+        Student1.prototype.constructor = Student1;
+
+        let student1 = new Student1("Ebonie Rangel", "7175 Yukon Street6", "(507) 833-3567", "Geography");
+
+        let student1Name = student1.getName();
+        let student1Info = student1.getInfo();
+
+        console.log(student1Name);
+        console.log(student1Info);
+
+        ///////////////////////// STUDENT 2 //////////////////////////////////
+
+        function Student2(name, address, phone, course) {
+            Student.call(this, name, address, phone, course);
+        }
+
+        Student2.prototype = Object.create(Student.prototype);
+        Student2.prototype.constructor = Student2;
+
+        let student2 = new Student2("Keenan Ellwood", "2 Elm Lane", "(894) 831-6482", "History");
+
+        let student2Name = student2.getName();
+        let student2Info = student2.getInfo();
+
+        console.log(student2Name);
+        console.log(student2Info);
+
+        //////////////////////// STUDENT 3 //////////////////////////////////
+
+        function Student3(name, address, phone, course) {
+            Student.call(this, name, address, phone, course);
+        }
+
+        Student3.prototype = Object.create(Student.prototype);
+        Student3.prototype.constructor = Student3;
+
+        let student3 = new Student3("Kailan Smart", "795 Harvard Street", "(925) 856-5167", "Biology");
+
+        let student3Name = student3.getName();
+        let student3Info = student3.getInfo();
+
+        console.log(student3Name);
+        console.log(student3Info);
+
+        ///////////////////////// STUDENT 4 //////////////////////////////////
+
+        function Student4(name, address, phone, course) {
+            Student.call(this, name, address, phone, course);
+        }
+
+        Student4.prototype = Object.create(Student.prototype);
+        Student4.prototype.constructor = Student4;
+
+        let student4 = new Student4("Kaydan Hirst", "9 East Lakeview Ave.", "(939) 812-6141", "Programming");
+
+        let student4Name = student4.getName();
+        let student4Info = student4.getInfo();
+
+        console.log(student4Name);
+        console.log(student4Info);
+
+        ///////////////////////// STUDENT 5 //////////////////////////////////
+
+        function Student5(name, address, phone, course) {
+            Student.call(this, name, address, phone, course);
+        }
+
+        Student5.prototype = Object.create(Student.prototype);
+        Student5.prototype.constructor = Student5;
+
+        let student5 = new Student5("Isabelle Prentice", "700 Rock Maple St.", "(899) 875-8627", "Math");
+
+        let student5Name = student5.getName();
+        let student5Info = student5.getInfo();
+
+        console.log(student5Name);
+        console.log(student5Info);
+
+
+    </script>
+</body>
+
+</html>
